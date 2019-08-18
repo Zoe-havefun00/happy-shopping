@@ -1,21 +1,56 @@
 /**index.wxss**/
-.userinfo {
+
+
+/* 轮播图 */
+swiper{
+  margin-top: 100rpx;
+}
+.slide-image{
+  width: 750rpx;
+  height: 340rpx;
+}
+
+/* 分类菜单 */
+.menus{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  padding: 20rpx 0;
 }
-
-.userinfo-avatar {
+.menus image{
   width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+  height:140rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+/* 楼层 */
+/* 楼层标题 */
+.floor{
+  margin-top: 20rpx;
+  width: 750rpx;
+}
+.floor-title image{
+  width: 100%;
+  height: 60rpx;
+}
+/* 楼层内容左大图 */
+.floor-content{
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
 }
 
-.usermotto {
-  margin-top: 200px;
+.floor-content-left image{
+   width: 232rpx;
+   height: 386rpx;
+}
+.floor-content-right{
+  margin-left: 10rpx;
+  /* height: auto; */
+  flex:1;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+.floor-content-right image{ 
+  width: 233rpx;
+  height: 188rpx;
 }

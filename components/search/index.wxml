@@ -1,0 +1,7 @@
+<!-- 顶部搜索栏 -->
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="20"/>搜索    
+    </view>
+  </view>
+

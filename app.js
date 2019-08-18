@@ -1,39 +1,37 @@
+import request from "./utils/request.js";
+
 //app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+  // 全局的生命周期函数
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+  // 小程序创建运行时候会触发,用来初始化小程序的内容，5分钟小程序会自动销毁
+  onLaunch() {
+    // console.log("小程序开始执行")
+
+    request.defaults.baseURL = "https://api.zbztb.cn/api/public/v1";
+
+    // 传入一个函数，统一处理请求错误
+    request.onError(res => {
+      if (res.statusCode == 200) {
+
+        // 弹窗
+        // wx.showModal({
+        //   title: '提示',
+        //   content: '请求错误',
+        // })
       }
     })
   },
-  globalData: {
-    userInfo: null
+
+  // 小程序显示的时候触发的，
+  onShow() {
+    //console.log("小程序显示的时候触发的")
+  },
+
+  // 小程序隐藏的时候触发的
+  onHide() {
+    //console.log("小程序隐藏的时候触发的")
   }
+
 })
