@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": 0,
@@ -96,6 +96,12 @@
 					"name": "pages/goods_detail/index",
 					"pathName": "pages/goods_detail/index",
 					"query": "id=43982",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cart/index",
+					"pathName": "pages/cart/index",
 					"scene": null
 				}
 			]
