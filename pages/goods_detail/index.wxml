@@ -1,0 +1,55 @@
+<!--pages/goods_detail/index.wxml-->
+<!-- 这是宝贝详情页面 -->
+<view>
+  <!-- 轮播图 -->
+  <swiper
+  class="goods-swiper" 
+  indicator-dots
+  indicator-color="rgba(255, 255, 255, .3)"
+  indicator-active-color="#fff"
+  >
+  <block wx:for="{{details.pics}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item.pics_big}}" class="slide-image" mode="aspectFill"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 商品信息 -->
+<view class="goods_price">¥ {{details.goods_price}}</view>
+<view class="goods_info">
+  <view class="goods_title">{{details.goods_name}}</view>
+  <view class="goods_star">
+    <icon class="iconfont icon-shoucang"/>
+    <text>收藏</text>
+  </view>  
+</view>
+<view class="goods_express">快递：免运费</view>
+
+<!-- 商品详情 使用富文本框 文档地址：https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html-->
+<rich-text nodes="{{details.goods_introduce}}"></rich-text>
+
+<!-- 底部栏 -->
+<view class="footer-bar">
+  <!-- 打开客服会话的按钮 -->
+  <button class="contact" open-type="contact">
+    联系客服
+  </button>
+
+  <!-- 左侧的图标 -->
+  <view class="footer-bar-left">
+    <view class="iconfont icon-kefu"></view>
+    <text>联系客服</text>
+  </view>
+  
+  <!-- tabbar的页面需要加上open-type="switchTab" -->
+  <navigator url="/pages/cart/index" open-type="switchTab" class="footer-bar-left">
+    <view class="iconfont icon-gouwuche"></view>
+    <text>购物车</text>
+  </navigator>
+
+  <!-- 右侧的按钮 -->
+  <view class="footer-button">加入购物车</view>
+  <view class="footer-button">立即购买</view>
+</view>
+</view>

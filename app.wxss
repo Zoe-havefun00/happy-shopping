@@ -1,2 +1,4 @@
 /**app.wxss**/
+/* 引入字体样式 */
+@import "./common/style.wxss";
 
