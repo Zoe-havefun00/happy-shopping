@@ -14,6 +14,7 @@ page, .container{
   justify-content: space-between;
   padding-right:100rpx;
   position: relative;
+  font-size: 14px;
 }
 
  .address-info::after{
@@ -32,6 +33,7 @@ page, .container{
  .address-text{
   padding:20rpx;
   padding-top:0;
+  font-size: 14px;
 }
 
 /* 购物车的商品列表 */
@@ -138,6 +140,7 @@ page, .container{
   display: flex;
   font-size:14px;
   background:#fff;
+  align-items: center;
 }
 
  .footer-left{
@@ -154,6 +157,8 @@ page, .container{
  .footer-center{
   flex:1;
   margin:0 50rpx;
+  margin:5rpx 50rpx;
+  line-height: 1
 }
 
  .footer-center .colorRed{
